@@ -48,9 +48,9 @@ table {
 }
 
 header{
-  background-color: black;
+  background-color: dimgray;
   color:white;
-  font-family:sans-serif;
+  font-family:"Homemade Apple", serif;
 }
 /*section img{
   height: 600px;
@@ -64,7 +64,7 @@ header{
 /*HEADER*/
 #name{
   font-size: 50px;
-  font-family: serif;
+  font-family: "Homemade Apple", serif;
   display: inline-block;
   margin: 10px 0px 0px 20px;
 }
@@ -90,7 +90,7 @@ header{
 }
 
 #top-nav ul li{
-  background-color:chartreuse;
+  /*background-color:chartreuse;*/
   display:inline-block;
   height:40px;
   width: 40px;
@@ -99,14 +99,20 @@ header{
   margin-right:10px;
   top:-48px;
 }
+/*SOCIAL-MEDIA BUTTONS*/
+.social-media{
+  height:40px;
+  width: 40px;
+}
 
 /*SECOND NAV*/
 #second-nav-bar{
   height:40px;
   color: white;
-  font-family: serif;
+  font-family: "Karla";
   font-size: 20px;
   background-color: #999;
+  /*background-color: #999;  light grey*/
 }
 
 #second-nav-bar ul{
@@ -139,7 +145,7 @@ footer{
   text-align: center;
   clear:both;
   color:white;
-  font-family: Arial;
+  font-family: "Karla";
   height:40px;
   width: 100%;
 
