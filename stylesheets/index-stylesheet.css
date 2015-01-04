@@ -51,15 +51,26 @@ header{
   background-color: black;
   color:white;
   font-family:sans-serif;
-  position:static;
+}
+/*section img{
+  height: 600px;
+  width: 600px;
+}*/
+#main-image{
+  text-align: center;
 
 }
-body{
-  font-family:sans-serif;
-  font-size: 16px;
 
+/*HEADER*/
+#name{
+  font-size: 50px;
+  font-family: serif;
+  display: inline-block;
+  margin: 10px 0px 0px 20px;
 }
-#top-nav-border{
+
+/*TOP NAV*/
+/*#top-nav-border{
   background-color: black;
   height:40px;
   border-bottom: 2px solid white;
@@ -68,72 +79,64 @@ body{
   display:inline-block;
 
 }
-
+*/
+#top-nav{
+  border-bottom: 2px solid white;
+}
 #top-nav ul{
   position:relative;
+  float:right;
+  list-style-type: none;
 }
 
 #top-nav ul li{
   background-color:chartreuse;
+  display:inline-block;
   height:40px;
   width: 40px;
-  display:inline-block;
-  border-radius: 10px;
   position:relative;
-  top:-47px;
-  right:150px;
-  float:right;
-  margin:2px;
-
+  border-radius: 10px;
+  margin-right:10px;
+  top:-48px;
 }
 
-ul{
-  list-style-type: none;
-}
-
+/*SECOND NAV*/
 #second-nav-bar{
   height:40px;
-  width: 100%;
   color: white;
-
-
+  font-family: serif;
+  font-size: 20px;
+  background-color: #999;
 }
 
-#name{
-  font-size: 35px;
-  font-family: serif;
-  margin-left: 10px;
-  left: 150px;
+#second-nav-bar ul{
+  float:right;
+  vertical-align: middle;
 }
 
 #second-nav-bar ul li{
-  background-color:coral;
-  height:40px;
-  width: 200px;
-  display:inline-block;
-  border-radius: 10px;
-  position:relative;
-  top: -40px;
-  right:-200px;
+  background-color: #999;
   float:right;
-  margin:2px;
-  color:white;
-}
-#second-nav-bar ul{
-  margin-top: 2px;
+  height:40px;
+  width: 150px;
+  display:inline-block;
+  position:relative;
+  left: 270px;
+  border: 0.5px solid white;
+  text-align: center;
 }
 
-header #second-nav-bar a{
+#second-nav-bar ul li a{
   text-decoration: none;
   color:white;
-  margin-left: 65px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  left: 0;
-
+  display:inline-block;
+  vertical-align: middle;
+  line-height: 30px; /*used line-height and vertical-align: to center links*/
 }
 
+/*FOOTER*/
 footer{
+  text-align: center;
   clear:both;
   color:white;
   font-family: Arial;
@@ -147,43 +150,22 @@ footer nav{
   height:40px;
   width: 100%;
   position:fixed;
-  left:0px;
-  bottom:0px;
-  background:#999;
   padding:10px;
+  bottom:0px; /*leave this to anchor footer*/
+  background:#999;
+  z-index: 1;
 
-}
-
-footer nav ul {
-  margin-right: auto;
-  margin-left: 550px;
-
-  left: 100px;
-  top: 500px;
-  position:;
 }
 
 footer ul li{
   display:inline-block;
   margin-top: 10px;
+
 }
 footer a{
   text-decoration: none;
   color: white;
-  font-family: Arial;
-  margin-right: auto;
-  margin-left:auto;
-  position: relative;
-}
-
-section img{
-  height: 500px;
-  width: 400px;
-}
-
-#main-image{
-  position:absolute;
-  left:500px;
-
 
 }
+
+
