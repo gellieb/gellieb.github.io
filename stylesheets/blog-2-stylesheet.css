@@ -1,0 +1,186 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+header{
+  background-color: dimgray;
+  color:white;
+  font-family:"Homemade Apple", serif;
+}
+/*section img{
+  height: 600px;
+  width: 600px;
+}*/
+#main-image{
+  text-align: center;
+}
+
+/*HEADER*/
+#name{
+  font-size: 55px;
+  font-family: "Homemade Apple", serif;
+  display: inline-block;
+  margin: 10px 0px -40px 20px;
+  text-align: center;
+
+}
+#name a{
+  text-decoration: none;
+  color: white;
+  vertical-align: middle;
+  line-height: 70px;
+
+}
+
+/*TOP NAV*/
+/*#top-nav-border{
+  background-color: black;
+  height:40px;
+  border-bottom: 2px solid white;
+  width:100%;
+  position: static;
+  display:inline-block;
+
+}
+*/
+#top-nav{
+  border-bottom: 2px solid white;
+
+}
+#top-nav ul{
+  position:relative;
+  float:right;
+  list-style-type: none;
+}
+
+#top-nav ul li{
+  /*background-color:chartreuse;*/
+  display:inline-block;
+  height:40px;
+  width: 40px;
+  position:relative;
+  border-radius: 10px;
+  margin-right:10px;
+  top:-48px;
+}
+/*SOCIAL-MEDIA BUTTONS*/
+.social-media{
+  height:40px;
+  width: 40px;
+}
+
+/*SECOND NAV*/
+#second-nav-bar{
+  height:40px;
+  color: white;
+  font-family: "Karla";
+  font-size: 20px;
+  background-color: #999;
+  /*background-color: #999;  light grey*/
+}
+
+#second-nav-bar ul{
+  float:right;
+  vertical-align: middle;
+}
+
+#second-nav-bar ul li{
+  background-color: #999;
+  float:right;
+  height:40px;
+  width: 150px;
+  display:inline-block;
+  position:relative;
+  left: 270px;
+  border: 0.5px solid white;
+  text-align: center;
+}
+
+#second-nav-bar ul li a{
+  text-decoration: none;
+  color:white;
+  display:inline-block;
+  vertical-align: middle;
+  line-height: 35px; /*used line-height and vertical-align: to center links*/
+}
+
+/*FOOTER*/
+footer{
+  text-align: center;
+  clear:both;
+  color:white;
+  font-family: "Karla";
+  height:40px;
+  width: 100%;
+
+
+}
+
+footer nav{
+  height:40px;
+  width: 100%;
+  position:fixed;
+  padding:10px;
+  bottom:0px; /*leave this to anchor footer*/
+  background:#999;
+  z-index: 1;
+
+}
+
+footer ul li{
+  display:inline-block;
+  margin-top: 10px;
+
+}
+footer a{
+  text-decoration: none;
+  color: white;
+
+}
+
+
