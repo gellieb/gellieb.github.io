@@ -63,10 +63,19 @@ header{
 
 /*HEADER*/
 #name{
-  font-size: 50px;
+  font-size: 55px;
   font-family: "Homemade Apple", serif;
   display: inline-block;
-  margin: 10px 0px 0px 20px;
+  margin: 10px 0px -40px 20px;
+  text-align: center;
+
+}
+#name a{
+  text-decoration: none;
+  color: white;
+  vertical-align: middle;
+  line-height: 70px;
+
 }
 
 /*TOP NAV*/
@@ -82,6 +91,7 @@ header{
 */
 #top-nav{
   border-bottom: 2px solid white;
+
 }
 #top-nav ul{
   position:relative;
