@@ -183,7 +183,7 @@ footer a{
 
 .title{
   height: 50px;
-  width: 300px;
+  width: ;
   background-color: gold;
   margin: 20px auto; /*centered title container*/
 
@@ -197,11 +197,12 @@ footer a{
 }
 
 .title h2{
-  font-family: "Karla";
-  font-size: 14px;
+  font-family: "Homemade Apple";
+  font-size: 16px;
+  font-weight: bolder;
   text-align: center; /*horizontally centered text*/
   line-height: 2px; /*vertically centers text within title container*/
-  margin: 0 auto;
+  margin: 20px auto;
 }
 .body{
   width: 60%;
@@ -215,11 +216,13 @@ footer a{
 
 #text{
   width: 60%;
-  height: 400px;
+  /*height: 400px;*/
   border: 1px solid black;
-  margin: 50px auto;
+  margin: 10% auto;
   position:relative;
   overflow: hidden;
+  font-family: "Karla";
+  font-size: 18px;
 }
 
 
