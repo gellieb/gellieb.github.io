@@ -52,13 +52,6 @@ header{
   color:white;
   font-family:"Homemade Apple", serif;
 }
-/*section img{
-  height: 600px;
-  width: 600px;
-}*/
-#main-image{
-  text-align: center;
-}
 
 /*HEADER*/
 #name{
@@ -67,6 +60,7 @@ header{
   display: inline-block;
   margin: 10px 0px -40px 20px;
   text-align: center;
+  z-index: 2;
 
 }
 #name a{
@@ -78,18 +72,9 @@ header{
 }
 
 /*TOP NAV*/
-/*#top-nav-border{
-  background-color: black;
-  height:40px;
-  border-bottom: 2px solid white;
-  width:100%;
-  position: static;
-  display:inline-block;
-
-}
-*/
 #top-nav{
   border-bottom: 2px solid white;
+  z-index: 3;
 
 }
 #top-nav ul{
@@ -99,7 +84,6 @@ header{
 }
 
 #top-nav ul li{
-  /*background-color:chartreuse;*/
   display:inline-block;
   height:40px;
   width: 40px;
@@ -121,7 +105,6 @@ header{
   font-family: "Karla";
   font-size: 20px;
   background-color: #999;
-  /*background-color: #999;  light grey*/
 }
 
 #second-nav-bar ul{
@@ -180,7 +163,70 @@ footer ul li{
 footer a{
   text-decoration: none;
   color: white;
+}
+
+/*MAIN IMAGE*/
+#main-image{
+  background-color: aliceblue;
+  height: 400px;
+  width:400px;
+  margin:-150px 0 0 -200px;
+  display:block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  border: 1px solid #999;
+  /*read css notes on centering*/
+}
+
+/*BLOG POSTS*/
+
+.title{
+  height: 50px;
+  width: 300px;
+  background-color: gold;
+  margin: 20px auto; /*centered title container*/
 
 }
+.title h1{
+  font-family: "Homemade Apple";
+  font-size: 32px;
+  text-align: center; /*horizontally centered text*/
+  line-height: 50px; /*vertically centers text within title container*/
+
+}
+
+.blog-area{
+  margin:0 auto 100px auto;
+  display: block;
+  left: 25%;
+  top:30%;
+  position:absolute;
+  overflow:hidden; /*read css notes about overflow*/
+}
+
+.blog-post{
+  width: 200px;
+  height: 200px;
+  background-color: coral;
+  position: relative;
+  display:inline-block;
+  text-align: center;
+
+
+}
+.blog-post img{
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+}
+.blog-post a{
+  text-decoration: none;
+  font-family: "Karla";
+  color: dimgray;
+  line-height: 30px;
+}
+
+
 
 
