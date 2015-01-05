@@ -196,7 +196,7 @@ footer a{
 
 }
 
-.blog-area{
+.project-area{
   margin:0 auto 100px auto;
   display: block;
   left: 25%;
@@ -205,7 +205,7 @@ footer a{
   overflow:hidden; /*read css notes about overflow*/
 }
 
-.blog-post{
+.project-post{
   width: 200px;
   height: 200px;
   background-color: coral;
@@ -215,14 +215,14 @@ footer a{
 
 
 }
-.blog-post img{
+.project-post img{
   z-index: 1;
   width: 200px;
   height: 200px;
 }
-.blog-post a{
+.project-post a{
   text-decoration: none;
-  font-family: "Homemade A";
+  font-family: "Homemade Apple";
   color: dimgray;
   line-height: 30px;
   font-size:20px;
