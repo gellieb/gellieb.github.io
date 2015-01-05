@@ -189,8 +189,9 @@ footer a{
 .title{
   height: 50px;
   width: 300px;
-  background-color: greenyellow;
+  background-color: orchid;
   margin: 20px auto; /*centered title container*/
+
 
 }
 .title h1{
@@ -208,6 +209,7 @@ footer a{
   top:30%;
   position:absolute;
   overflow:hidden; /*read css notes about overflow*/
+
 }
 
 .project-post{
@@ -217,6 +219,7 @@ footer a{
 */  position: relative;
   display:inline-block;
   text-align: center;
+
 
 
 }
