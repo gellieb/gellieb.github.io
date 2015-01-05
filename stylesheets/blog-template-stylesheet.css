@@ -132,6 +132,11 @@ header{
   line-height: 35px; /*used line-height and vertical-align: to center links*/
 }
 
+#second-nav-bar ul li a:hover{
+  color:/*orchid*/;
+  font-family: "Homemade Apple"
+}
+
 /*FOOTER*/
 footer{
   text-align: center;
@@ -163,6 +168,11 @@ footer ul li{
 footer a{
   text-decoration: none;
   color: white;
+}
+
+footer a:hover{
+  color:/*orchid*/;
+  font-family: "Homemade Apple"
 }
 
 /*MAIN IMAGE*/

@@ -132,6 +132,10 @@ header{
   line-height: 35px; /*used line-height and vertical-align: to center links*/
 }
 
+#second-nav-bar ul li a:hover{
+  color:/*orchid*/;
+  font-family: "Homemade Apple"
+}
 /*FOOTER*/
 footer{
   text-align: center;
@@ -140,8 +144,6 @@ footer{
   font-family: "Karla";
   height:40px;
   width: 100%;
-
-
 }
 
 footer nav{
@@ -152,7 +154,6 @@ footer nav{
   bottom:0px; /*leave this to anchor footer*/
   background:#999;
   z-index: 1;
-
 }
 
 footer ul li{
@@ -163,6 +164,10 @@ footer ul li{
 footer a{
   text-decoration: none;
   color: white;
+}
+footer a:hover{
+  color:/*orchid*/;
+  font-family: "Homemade Apple"
 }
 
 /*MAIN IMAGE*/
@@ -205,9 +210,9 @@ footer a{
 }
 
 .blog-area{
-  margin:0 auto 100px auto;
+  margin:40px auto 100px auto;
   display: block;
-  left: 25%;
+  left: 27.8%;
   top:30%;
   position:absolute;
   overflow:hidden; /*read css notes about overflow*/
@@ -219,20 +224,28 @@ footer a{
   position: relative;
   display:inline-block;
   text-align: center;
+  vertical-align: middle;
+  margin-top:;
+  /*line-height: 0px;*/
+  border:1px solid dimgray;
 
 
 }
-.blog-post img{
+/*.blog-post img{
   z-index: 1;
   width: 200px;
   height: 200px;
-}
+}*/
 .blog-post a{
   text-decoration: none;
   font-family: "Homemade Apple";
   color: dimgray;
   line-height: 30px;
   font-size:20px;
+}
+.blog-post a:hover{
+  color:orchid;
+  font-family: "Karla"
 }
 
 
