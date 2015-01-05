@@ -167,16 +167,24 @@ footer a{
 
 /*MAIN IMAGE*/
 #main-image{
-  background-color: aliceblue;
-  height: 400px;
-  width:400px;
-  margin:-150px 0 0 -200px;
+
+  margin:-300px 0 0 -300px;
   display:block;
-  position: fixed;
+  position: absolute;
   left: 50%;
-  top: 50%;
-  border: 1px solid #999;
+  top: 80%;
+  /*border: 1px solid #999;*/
   /*read css notes on centering*/
+  height: 600px;
+  width:600px;
+}
+
+#main-image img{
+  text-align: center;
+  /*height: 400px;*/
+  width:600px;
+  position: relative;
+  z-index: 0
 }
 
 /*BLOG POSTS*/
@@ -184,7 +192,7 @@ footer a{
 .title{
   height: 50px;
   width: 300px;
-  background-color: gold;
+  background-color: greenyellow;
   margin: 20px auto; /*centered title container*/
 
 }
