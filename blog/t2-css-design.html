@@ -36,9 +36,26 @@
   <section>
     <div id="main-image"><img src="../imgs/white-peonies.png"/></div>
     <div class="body">
-      <div class="title"><h1>Title</h1><h2>January 5, 2015</h2></div>
-      <!-- <p id="date">January 5, 2015</p> -->
-      <p id="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+      <div class="title"><h1>What's the difference between Static, Relative, Absolute, and Fixed positioning?</h1><h2>January 5, 2015</h2></div>
+      <
+      <p id="text">
+        As a total beginner to HTML and CSS, most of CSS positioning is very tedious. There are numerous trials and just as many errors. The successes are small, but fleeting since there always seems to be something you can (read: *have* to) adjust-- the line height that doesn't look quite right, the font style that doesn't quite suit your web site's persona, etc. But most of the time, you'll be spending your CSS hours going back and forth and back again from static/absolute/relative/fixed positioning to aptly display that awesome code you just wrote or the beautiful image you sourced from tumblr during your break.
+        <br>
+
+        Now let's compare these seemingly elusive positioning values. I'll compare static vs relative then absolute vs fixed since they are similar to each other, respectively.
+        <br>
+
+        Static positioning is really a misnomer since boxes with "position:static" aren't really purposely positioned. They just lay in order that they occurred in your HTML code and take up as much room as they need. So think of it as the default behavior of the element (containers, text, images, etc) that you create when you don't apply any CSS at all to your HTML.
+        <br>
+        Relative positioning is more closely related to static positioning that it is to either absolute or fixed positioning. An element with "position:relative" lays out just like a static element. One clear difference between statically and relatively positioned elements is that you can shift the position of the box created with "top"|"bottom"|"left"|"right" properties. *However*, the thing to remember with relative positioning is that it's only the generated box that is shifted. The element still stays static document flow (read: The element really stays where it is, but you can change its *visual* appearance ). So relative positioning is primarily useful in combination with floats to create layout in which the presentational order (CSS) of the element is different from the source order (HTML).
+        <br>
+        Absolutely positioned elements, in relation to itself, is relative to/depends on whatever contains it (makes sense) or, it's contained only by <html>, to the browser window (aka viewport). In relation to other elements, the other elements will behave as if the absolutely positioned element doesn't exist. So, you can expect overlapping to occur. Sometimes you want it; sometimes you don't.
+        Similar to relative positioning, you can specify the position of this absolutely positioned element with "top"|"bottom"|"left"|"right" properties.
+
+        Fixed positioning is a very specialized form of absolute positioning. Unlike absolute positioning in which those elements is relative to either the container it's contained in or the browser window, fixed positioned elements are *only* relative to the viewport. They are also easy to spot because even if the page is scrolled, the fixed element will stay in the same position inside the window.
+        <br>
+        That was probably a lot to take in... so definitely read it again and go try these positions in your CSS.
+      </p>
 
     </div>
 
