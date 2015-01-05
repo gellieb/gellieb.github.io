@@ -208,7 +208,7 @@ footer a{
 .blog-post{
   width: 200px;
   height: 200px;
-  background-color: coral;
+  /*background-color: coral;*/
   position: relative;
   display:inline-block;
   text-align: center;
@@ -222,7 +222,7 @@ footer a{
 }
 .blog-post a{
   text-decoration: none;
-  font-family: "Homemade A";
+  font-family: "Homemade Apple";
   color: dimgray;
   line-height: 30px;
   font-size:20px;

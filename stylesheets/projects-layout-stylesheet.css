@@ -208,8 +208,8 @@ footer a{
 .project-post{
   width: 200px;
   height: 200px;
-  background-color: coral;
-  position: relative;
+/*  background-color: coral;
+*/  position: relative;
   display:inline-block;
   text-align: center;
 
