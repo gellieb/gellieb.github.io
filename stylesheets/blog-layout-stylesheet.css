@@ -240,7 +240,7 @@ footer a:hover{
 .blog-post a{
   text-decoration: none;
   font-family: "Homemade Apple";
-  color: dimgray;
+  color: #383838 ;
   line-height: 30px;
   font-size:20px;
 }
