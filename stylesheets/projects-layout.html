@@ -1,0 +1,245 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+header{
+  background-color: dimgray;
+  color:white;
+  font-family:"Homemade Apple", serif;
+}
+
+/*HEADER*/
+#name{
+  font-size: 55px;
+  font-family: "Homemade Apple", serif;
+  display: inline-block;
+  margin: 10px 0px -40px 20px;
+  text-align: center;
+  z-index: 2;
+
+}
+#name a{
+  text-decoration: none;
+  color: white;
+  vertical-align: middle;
+  line-height: 70px;
+
+}
+
+/*TOP NAV*/
+#top-nav{
+  border-bottom: 2px solid white;
+  z-index: 3;
+
+}
+#top-nav ul{
+  position:relative;
+  float:right;
+  list-style-type: none;
+}
+
+#top-nav ul li{
+  display:inline-block;
+  height:40px;
+  width: 40px;
+  position:relative;
+  border-radius: 10px;
+  margin-right:10px;
+  top:-48px;
+}
+/*SOCIAL-MEDIA BUTTONS*/
+.social-media{
+  height:40px;
+  width: 40px;
+}
+
+/*SECOND NAV*/
+#second-nav-bar{
+  height:40px;
+  color: white;
+  font-family: "Karla";
+  font-size: 20px;
+  background-color: #999;
+}
+
+#second-nav-bar ul{
+  float:right;
+  vertical-align: middle;
+}
+
+#second-nav-bar ul li{
+  background-color: #999;
+  float:right;
+  height:40px;
+  width: 150px;
+  display:inline-block;
+  position:relative;
+  left: 270px;
+  border: 0.5px solid white;
+  text-align: center;
+}
+
+#second-nav-bar ul li a{
+  text-decoration: none;
+  color:white;
+  display:inline-block;
+  vertical-align: middle;
+  line-height: 35px; /*used line-height and vertical-align: to center links*/
+}
+
+#second-nav-bar ul li a:hover{
+  color:/*orchid*/;
+  font-family: "Homemade Apple"
+}
+
+/*FOOTER*/
+footer{
+  text-align: center;
+  clear:both;
+  color:white;
+  font-family: "Karla";
+  height:40px;
+  width: 100%;
+}
+
+footer nav{
+  height:40px;
+  width: 100%;
+  position:fixed;
+  padding:10px;
+  bottom:0px; /*leave this to anchor footer*/
+  background:#999;
+  z-index: 1;
+}
+
+footer ul li{
+  display:inline-block;
+  margin-top: 10px;
+}
+footer a{
+  text-decoration: none;
+  color: white;
+}
+footer a:hover{
+  color:/*orchid*/;
+  font-family: "Homemade Apple"
+}
+
+/*MAIN IMAGE*/
+#main-image{
+  margin:-220px 0 0 -220px;
+  display:block;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  border: 1px solid #999;
+  /*read css notes on centering*/
+}
+#main-image img{
+  text-align: center;
+  width:420px;
+  height: 400px;
+
+  position: relative;
+
+}
+
+/*BLOG POSTS*/
+
+.title{
+  height: 50px;
+  width: 300px;
+  background-color: orchid;
+  margin: 20px auto; /*centered title container*/
+
+
+}
+.title h1{
+  font-family: "Homemade Apple";
+  font-size: 32px;
+  text-align: center; /*horizontally centered text*/
+  line-height: 60px; /*vertically centers text within title container*/
+
+}
+
+.project-area{
+  margin:0 auto 100px auto;
+  display: block;
+  left: 25%;
+  top:30%;
+  position:absolute;
+  overflow:hidden; /*read css notes about overflow*/
+}
+
+.project-post{
+  width: 200px;
+  height: 200px;
+/*  background-color: coral;
+*/  position: relative;
+  display:inline-block;
+  text-align: center;
+}
+.project-post img{
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+}
+.project-post a{
+  text-decoration: none;
+  font-family: "Homemade Apple";
+  color: dimgray;
+  line-height: 30px;
+  font-size:20px;
+}
+
+.blog-post a:hover{
+  color:orchid;
+  font-family: "Karla"
+}
+
+
