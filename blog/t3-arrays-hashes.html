@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+  <title>Angel's Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-template-stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Homemade+Apple">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Karla">
+</head>
+
+<main>
+  <header>
+    <div id="name"><a href="./">Angel Baek</a></div>
+    <div id="top-nav">
+      <ul>
+        <li><a href="http://facebook.com"><img src="../imgs/facebook.png" class="social-media"></a></li>
+
+        <li><a href="http://github.io/gellieb"><img src="../imgs/Github.png" class="social-media"></a></li>
+
+        <li><a href="http://twitter.com/gellieb_"><img src="../imgs/twitter.png" class="social-media"></a></li>
+
+        <li><a href="http://instagram.com"><img src="../imgs/Instagram.png" class="social-media"></a></li>
+
+        <li><a href="mailto:angelbaek1@gmail.com"><img src="../imgs/email-48.png" class="social-media"></a></li>
+      </ul>
+    </div>
+    <div id="second-nav-bar">
+      <ul>
+        <li><a href="/blog/blog-layout.html">Blogs</a></li>
+        <li><a href="/projects-layout.html">Projects</a></li>
+        <li><a href="/about-me.html">About Me</a></li>
+        <li><a href="/">Home</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section>
+    <div id="main-image"><img src="../imgs/white-peonies.png"/></div>
+    <div class="body">
+      <div class="title"><h1>What's the difference between arrays and hashes?</h1><h2>January 8, 2015</h2></div>
+      <!-- <p id="date">January 5, 2015</p> -->
+      <p id="text">Hello! Today's blog is comparing and contrasting ```Array```s and ```Hash```es. They are similar in many ways, but have structural and functional differences to distinguish the two. Let's start of with arrays.
+
+      Ruby-Doc describes arrays as "ordered, integer-indexed collections of any object. Array indexing starts at 0..." Okay, so an ```Array``` is basically a collection of strings, integers, symbols, etc, or a combination of any of these. Each item, aka element, in the array has an index which dictates its position in the array and also starts from 0. The great thing about arrays is that I can call any element in the array if I know it's position. To do that, we'll ```puts array[#]``` the # is the index of the element. The index increases sequentially, so from 0, 1, 2, 3....the last element's position. So, array's are pretty straight-forward.
+
+      Hashes, on the other hand, in Ruby-Doc, is described as "a *dictionary-like collection* of unique keys and their values... they are similar to Arrays, but where an Array uses integers as its index, a Hash allows you to use any object type."
+
+      This is a pretty apt definition of what a Hash is. Similar to an Array's indexing, which by the way is only numerical (0-#), Hashes have keys. Keys can be anything-- a string, a number, a symbol, and even an array-- and they must always have a value (hence, key-value pair)! The benefit of Hash's keys is that they don't have to be numerical and can, therefore, have a name that reflects that its values are.
+
+      ``` hash = { :first_name => "Angel", :last_name => "Baek"}```
+      Similar to an Array, to call the value "Angel", I will ```puts hash[:first_name]```. You can see that an Array's index is equivalent to a Hash's key. Just to reiterate, a key must always have a value! You can set to ```nil``` or another specified value but just remember a key needs its pair.
+
+      To ponder the uses, I'll compare Arrays and Hashes to the shelves of a refrigerator. Remember how an Array is just a collection of stuff? It can even contain arrays as its elements. So an array is like the fruit basket container at the base of the fridge-- you can have different, but ordered, compartments in there of fruits and veggies; however, if you start to include containers containing other containers (nested arrays) inside that fruit basket compartment, things might get hairy and difficult to sort.
+
+      A Hash's keys are like the different shelves/levels of the refrigerator.
+
+      + Each shelf is unique == keys can have any object as their names
+
+      + There can be one item or many different items per shelf == keys can store a value that is a single object ```{:first_name => "Angel"}```
+      or be an array containing multiple elements ```{:girl_names=> ["Jessica", "Kimberly", "Eloise"]}```
+
+      + ...that can include sub-shelves/containers
+      ```{:names=>
+          [{:girl_names=> ["Jessica", "Kimberly", "Eloise"]},
+          {:boy_names =>["Jacob", "Timothy", "Brandon"]}]
+      }```
+
+       Unlike the fruit basket analogy, containers separating different foods on the same level in fridge isn't very complicated or difficult to manage.
+       Ultimately, it comes down to data storage and preference and legibility. Hashes definitely trumps Arrays in how much they can store.
+
+       I hope that cleared some ambiguity between the two!
+
+      </p>
+
+    </div>
+
+
+
+
+
+
+  </section>
+
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a>  |  </li>
+        <li><a href="/about-me.html">About Me</a>  |  </li>
+        <li><a href="/projects-layout.html">Projects</a>  |  </li>
+        <li><a href="/blog/blog-layout.html">Blogs</a>  |  </li>
+        <li><a href="mailto:angelbaek1@gmail.com">Contact Me</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+
+
+
+
+</main>
