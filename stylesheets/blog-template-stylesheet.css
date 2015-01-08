@@ -5,7 +5,7 @@
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
+a, abbr, acronym, address, big, cite, /*code,*/
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
@@ -213,6 +213,7 @@ footer a:hover{
   text-align: center; /*horizontally centered text*/
   margin-bottom:-30px;
   line-height: 60px; /*vertically centers text within title container*/
+  position: relative;
 
 }
 
@@ -249,6 +250,14 @@ footer a:hover{
   z-index: 3;
 }
 
+ /*{
+  width: 60%
+  margin: 10% auto;
+  font-family: "Karla";
+  font-size: 18px;
+  position:relative;
+  margin-top: 10px;
+}*/
 
 
 
