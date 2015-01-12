@@ -47,6 +47,11 @@ table {
   border-spacing: 0;
 }
 
+
+a{
+  text-decoration: none;
+}
+
 header{
   background-color: dimgray;
   color:white;
@@ -64,7 +69,6 @@ header{
 
 }
 #name a{
-  text-decoration: none;
   color: white;
   vertical-align: middle;
   line-height: 70px;
@@ -156,7 +160,7 @@ footer nav{
   padding:10px;
   bottom:0px; /*leave this to anchor footer*/
   background:#999;
-  ;
+
 
 }
 
@@ -166,7 +170,6 @@ footer ul li{
 
 }
 footer a{
-  text-decoration: none;
   color: white;
 }
 
@@ -265,6 +268,5 @@ footer a:hover{
 ul li .code{
   width: 60%;
 }
-
 
 
