@@ -5,6 +5,8 @@
   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-template-stylesheet.css">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Homemade+Apple">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Karla">
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
 </head>
 
 <main>
@@ -42,7 +44,7 @@
         <br><br><br>Today's blog is comparing and contrasting Arrays and Hashes. They are similar in many ways, but have structural and functional differences to distinguish the two. Let's start of with arrays.</p><br><br>
         <p class="text">
         Ruby-Doc describes arrays as "ordered, integer-indexed collections of any object. Array indexing starts at 0..." Okay, so an Array is basically a collection of strings, integers, symbols, etc, or a combination of any of these. Each item, aka element, in the array has an index which dictates its position in the array and also starts from 0. The great thing about arrays is that I can call any element in the array if I know it's position. To do that, we'll do:
-        <div class="code"> puts array[#]</div></p>
+        <pre class="prettyprint"><code>puts array[#]</pre></code></p>
          <p class="text">The # is the index of the element. The index increases sequentially, so from 0, 1, 2, 3....the last element's position. So, array's are pretty straight-forward.
       </p>
       <br><br>
@@ -50,10 +52,10 @@
       Hashes, on the other hand, in Ruby-Doc, is described as "a *dictionary-like collection* of unique keys and their values... they are similar to Arrays, but where an Array uses integers as its index, a Hash allows you to use any object type."
       <br><br>
       This is a pretty apt definition of what a Hash is. Similar to an Array's indexing, which by the way is only numerical (0-#), Hashes have keys. Keys can be anything-- a string, a number, a symbol, and even an array-- and they must always have a value (hence, key-value pair)! The benefit of Hash's keys is that they don't have to be numerical and can, therefore, have a name that reflects that its values are.</p>
-      <div class="code">hash = { :first_name => "Angel", :last_name => "Baek"}</div>
+      <pre class="prettyprint"><code>hash = { :first_name => "Angel", :last_name => "Baek"}</code></pre>
       <br><br>
       <p class="text">
-      Similar to an Array, to call the value "Angel", do: <div class="code">puts hash[:first_name]</div></p>
+      Similar to an Array, to call the value "Angel", do: <pre class="prettyprint"><code>puts hash[:first_name]</code></pre></p>
       <br>
       <p class="text">You can see that an Array's index is equivalent to a Hash's key. Just to reiterate, a key must always have a value! You can set to nil or another specified value but just remember a key needs its pair.</p>
       <br><br>
@@ -62,20 +64,17 @@
       <br><br>
       <p class="text">
       A Hash's keys are like the different shelves/levels of the refrigerator:</p><br>
-          <ul class="text"><li> 1. Each shelf is unique == keys can have any object as their names</li><br>
-          <li> 2. There can be one item or many different items per shelf == keys can store a value that is a single object
-          <div class="code">{:first_name => "Angel"}</div></li><br>
-          <li> 3. or be an array containing multiple elements
-          <div class="code">{:girl_names=> ["Jessica", "Kimberly", "Eloise"]}</div></li>
-        <br>
-          <li>4. ...that can include sub-shelves/containers
-
-        <div class="code">{:names=>
-          <br>
-          [{:girl_names=> ["Jessica", "Kimberly", "Eloise"]},
-            <br>
-           {:boy_names =>["Jacob", "Timothy", "Brandon"]}]
-        <br>}</div></li></ul>
+      <p class="text"> 1. Each shelf is unique == keys can have any object as their names<br>
+      2. There can be one item or many different items per shelf == keys can store a value that is a single object
+      <pre class="prettyprint"><code>{:first_name => "Angel"}</code></pre><br></p>
+      <p class="text">
+      3. or be an array containing multiple elements
+      <pre class="prettyprint"><code>{:girl_names=> ["Jessica", "Kimberly", "Eloise"]}</code></pre><br></p>
+      <p class="text">
+      4. ...that can include sub-shelves/containers
+      <pre class="prettyprint"><code>{:names=>
+        [{:girl_names=> ["Jessica", "Kimberly", "Eloise"]},
+        {:boy_names =>["Jacob", "Timothy", "Brandon"]}]}</code></pre></p>
         <br><br>
       <p class="text">
        Unlike the fruit basket analogy, containers separating different foods on the same level in fridge isn't very complicated or difficult to manage.

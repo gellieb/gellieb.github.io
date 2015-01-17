@@ -212,7 +212,7 @@ footer a:hover{
 .blog-area{
   margin:40px auto 100px auto;
   display: block;
-  left: 27.8%;
+  left: 30%;
   top:30%;
   position:absolute;
   overflow:hidden; /*read css notes about overflow*/
@@ -225,18 +225,9 @@ footer a:hover{
   display:inline-block;
   text-align: center;
   vertical-align: middle;
-  margin-top:;
-
-  /*line-height: 0px;*/
-  /*border:1px solid dimgray;*/
-
-
 }
-/*.blog-post img{
-  z-index: 1;
-  width: 200px;
-  height: 200px;
-}*/
+
+
 .blog-post a{
   text-decoration: none;
   font-family: "Homemade Apple";

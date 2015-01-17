@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<head>
+  <title>Angel's Blog</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-template-stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Homemade+Apple">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Karla">
+  <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+</head>
+
+<main>
+  <header>
+    <div id="name"><a href="./">Angel Baek</a></div>
+    <div id="top-nav">
+      <ul>
+        <li><a href="http://facebook.com"><img src="../imgs/facebook.png" class="social-media"></a></li>
+
+        <li><a href="http://github.io/gellieb"><img src="../imgs/Github.png" class="social-media"></a></li>
+
+        <li><a href="http://twitter.com/gellieb_"><img src="../imgs/twitter.png" class="social-media"></a></li>
+
+        <li><a href="http://instagram.com"><img src="../imgs/Instagram.png" class="social-media"></a></li>
+
+        <li><a href="mailto:angelbaek1@gmail.com"><img src="../imgs/email-48.png" class="social-media"></a></li>
+      </ul>
+    </div>
+    <div id="second-nav-bar">
+      <ul>
+        <li><a href="/blog/blog-layout.html">Blogs</a></li>
+        <li><a href="/projects-layout.html">Projects</a></li>
+        <li><a href="/about-me.html">About Me</a></li>
+        <li><a href="/">Home</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section>
+    <div id="main-image"><img src="../imgs/white-peonies.png"/></div>
+    <div class="body">
+      <div class="title"><h1>Enumerable#group_by</h1><h2>January 17, 2015</h2></div>
+
+      <p class="text">
+        What does the <code>group_by</code> method do?
+        It looks like this:</p>
+        <pre class="prettyprint"><code>some_array.group_by{|n| block}</code></pre>
+        <p class="text">
+        Simply, the <code>group_by</code> method that divides a collection (an array or a hash) into groups based on some given criteria in the block. It outputs a hash in which each key is resulting value of the block. The corresponding value is an array containing the elements of that group. Kinda make sense? Maybe an example will help.</p>
+        <br>
+        <h3>Enumerable#group_by and Arrays</h3>
+        <br>
+        <h4>Example:</h4>
+        <pre class="prettyprint"><code>(0..20).group_by{|number| number % 4}
+=>{0=>[0,4,8,12,16,20], 1=>[1,5,9,13,17], 2=>[2,6,10,14,18], 3=>[3,7,11,15,19]}</code></pre>
+
+        <p class="text">The numbers 0 through 20 are passed to the block, which received each number as the parameter <code>number</code>. The result value of the block <code>number % 4</code> determines which group each number will be placed. Those include 0, 1, 2, or 3.</p>
+          <ul><li>In the output, the hash will have 4 groups by the keys <code>0</code>, <code>1</code>, <code>2</code>, and <code>3</code>.</li>
+            <li>The key <code>0</code> will have a value that is an array of multiples of 4 within the range (numbers for which <code>number % 4</code> is 0)</li>
+            <li>The key <code>1</code> will have a value that is an array of numbers that have a remainder of 1 when divided by 4 (numbers for which <code>number % 4</code> is 1)</li>
+            <li>The key <code>2</code> will have a value that is an array of numbers that have a remainder of 2 when divided by 4 (numbers for which <code>number % 4</code> is 2)</li>
+            <li>The key <code>3</code> will have a value that is an array of numbers that have a remainder of 3 when divided by 4 (numbers for which <code>number % 4</code> is 3)</li></ul>
+
+
+          <p class="text">Perhaps that's well enough but what about a scenario using strings?</p>
+          <br>
+          <h3>Enumerable#group_by and Hash</h3>
+          <p class="text">Let's say that there's a pot luck happening at your place tomorrow. You've invited your closest group of friends and thankfully all of them are bringing some delicious goodies to share. However, the list is a little chaotic and you want to know if there will be double or triple of anything.
+          <br>
+          Here's the list:</p>
+          <pre class="prettyprint"><code>potluck = {"Peter" => "lasagna",
+           "Lois"  => "macaroni salad",
+           "Chris" => "lasagna",
+           "Meg"   => "brownies",
+           "Stewie" => "chateaubriand",
+           "Brian" => "macaroni salad",
+           "Evil Monkey" => "brownies",
+           "Homer" => "beer",
+           "Marge" => "ribs",
+           "Lisa" => "chateaubriand",
+           "Bart" => "brownies",
+           "Maggie" => "beer"}</code></pre>
+
+          <p class="text"> Let's sort the list by whatever the person is bringing.</p>
+          <pre class="prettyprint"><code>potluck.group_by{|person, bringing| bringing}
+=>{"lasagna"=>[["Peter", "lasagna"],
+               ["Chris", "lasagna"]],
+   "macaroni salad"=>[["Lois", "macaroni salad"],
+                      ["Brian", "macaroni salad"]],
+   "brownies"=>[["Meg", "brownies"],
+                ["Evil Monkey", "brownies"],
+                ["Bart", "brownies"]],
+   "chateaubriand"=>[["Stewie", "chateaubriand"],
+                     ["Lisa", "chateaubriand"]],
+   "beer"=>[["Homer", "beer"], ["Maggie", "beer"]],
+   "ribs"=>[["Marge", "ribs"]]}</code></pre>
+
+          <p class="text">
+            So in this case, we sorted the list so that we know exactly what's on the menu, who's bringing what, and if we'll have multiples of an item.
+            <br>
+            We, initially, set our parameters in the traditional hash format <code> |key, value|</code>. In the original potluck list, the keys were names of the people; the values were what they were bringing. The criteria in the block was what they're bringing. So "bringing" will serve as the keys in the sorted list. The values will be whoever in the <code>potluck</code> fits that criteria.
+            <br>
+            <br>
+            Wasn't that a little easier to read? Or maybe process? If list were much, much longer, then instead of having it sorted by an arbitrary fashion, we can regroup our data in a way that is more functional and useful!
+          </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a>  |  </li>
+        <li><a href="/about-me.html">About Me</a>  |  </li>
+        <li><a href="/projects-layout.html">Projects</a>  |  </li>
+        <li><a href="/blog/blog-layout.html">Blogs</a>  |  </li>
+        <li><a href="mailto:angelbaek1@gmail.com">Contact Me</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+
+
+
+
+</main>
