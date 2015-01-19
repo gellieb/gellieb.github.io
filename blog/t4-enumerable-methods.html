@@ -48,8 +48,7 @@
         Simply, the <code>group_by</code> method that divides a collection (an array or a hash) into groups based on some given criteria in the block. It outputs a hash in which each key is resulting value of the block. The corresponding value is an array containing the elements of that group. Kinda make sense? Maybe an example will help.</p>
         <br>
         <h3>Enumerable#group_by and Arrays</h3>
-        <br>
-        <h4>Example:</h4>
+        <!-- <h4>Example:</h4> -->
         <pre class="prettyprint"><code>(0..20).group_by{|number| number % 4}
 =>{0=>[0,4,8,12,16,20], 1=>[1,5,9,13,17], 2=>[2,6,10,14,18], 3=>[3,7,11,15,19]}</code></pre>
 
@@ -63,7 +62,7 @@
 
           <p class="text">Perhaps that's well enough but what about a scenario using strings?</p>
           <br>
-          <h3>Enumerable#group_by and Hash</h3>
+          <h3>Enumerable#group_by and Hash</h3><br>
           <p class="text">Let's say that there's a pot luck happening at your place tomorrow. You've invited your closest group of friends and thankfully all of them are bringing some delicious goodies to share. However, the list is a little chaotic and you want to know if there will be double or triple of anything.
           <br>
           Here's the list:</p>
