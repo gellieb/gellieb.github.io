@@ -7,7 +7,7 @@ html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
+small, strike, /*strong*/, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -48,6 +48,7 @@ table {
 
 a{
   text-decoration: none;
+  color: #990066;
 }
 
 header{
@@ -224,7 +225,8 @@ footer a:hover{
   font-weight: bolder;
   text-align: center; /*horizontally centered text*/
   line-height: 10px; /*vertically centers text within title container*/
-  margin: 30px auto;
+  padding:1%;
+  margin: 30px auto 60px;
   z-index: 2;
 }
 .body{
@@ -252,7 +254,7 @@ footer a:hover{
 
 }
 .text {
-  width: 60%;
+  width: 65%;
   /*height: 400px;*/
   /*border: 1px solid black;*/
   margin: 0 auto ;
@@ -273,7 +275,7 @@ h3{
   text-align: left;
   margin: 0 auto;
   position: relative;
-  left: 20%;
+  left: 6%;
 }
 
 h4{
@@ -282,7 +284,7 @@ h4{
   font-weight: bold;
   text-align: left;
   position: relative;
-  left: 20%
+  left: 10%
 }
 code{
   background-color: aliceblue;
@@ -308,3 +310,25 @@ pre {
   margin: 16px;
 }
 
+#stat img{
+  height:60%;
+  /*width:60%;*/
+  text-align: center;
+  left:11.75%;
+  position: relative;
+  margin: 0 auto;
+}
+
+quote{
+  width: 90%;
+  background-color:#CCCCFF;
+  opacity: 60%;
+  font-style: italic;
+  font-style: bold;
+  position: relative;
+  display: block;
+  padding: 5%;
+}
+/*span bold{
+  font-weight: bolder;
+}*/
