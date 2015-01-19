@@ -93,7 +93,7 @@ header{
   position:relative;
   border-radius: 10px;
   margin-right:10px;
-  top:-48px;
+  top:-68px;
 }
 /*SOCIAL-MEDIA BUTTONS*/
 .social-media{
@@ -125,6 +125,7 @@ header{
   left: 270px;
   border: 0.5px solid white;
   text-align: center;
+  margin-top:-20px;
 }
 
 #second-nav-bar ul li a{
