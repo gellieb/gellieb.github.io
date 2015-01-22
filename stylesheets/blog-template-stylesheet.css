@@ -49,7 +49,9 @@ table {
 a{
   text-decoration: none;
   color: #990066;
+  transition: all 0.3s ease-in; /*delays color transition*/
 }
+
 
 header{
   background-color: dimgray;
@@ -251,6 +253,7 @@ footer a:hover{
   /*text-align: left;*/
 
 
+
 }
 .text {
   width: 70%;
@@ -263,7 +266,17 @@ footer a:hover{
   font-size: 18px;
   /*z-index: 3;*/
   line-height: 1.5;
+}
 
+.text a {
+ transition: all 0.3s ease-in; /*delays color transition*/
+
+}
+.text a:hover{
+  -webkit-stroke-width: 5.3px;
+    -webkit-stroke-color: #FFFFFF;
+    -webkit-fill-color: #FFFFFF;
+    text-shadow: 1px 0px 20px  yellow; /*creates glow around text*/
 }
 
 h3{
@@ -313,7 +326,7 @@ pre {
   height:60%;
   /*width:60%;*/
   text-align: center;
-  left:0%;
+  left:10%;
   position: relative;
   margin: 0 auto;
 }
