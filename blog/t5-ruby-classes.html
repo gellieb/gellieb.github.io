@@ -38,9 +38,84 @@
   <section>
     <div id="main-image"><img src="../imgs/white-peonies.png"/></div>
     <div class="body">
-      <div class="title"><h1>Title</h1><h2>January 5, 2015</h2></div>
+      <div class="title"><h1>Ruby Classes and Inheritance</h1><h2>January 25, 2015</h2></div>
 
-      <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+      <p class="text">
+      By now, you should've come across several times that Ruby is an object-oriented language. This means that Ruby revolves around objects and all objects can be grouped into a <code>class</code>. These classes have a hierarchy similar to a family tree, in which each object is of some class is belongs to a more general class, which belongs to an even more general class, and so on. (In some programming languages, objects can have multiple classes, like your having two parents. However, Ruby keeps it simple: all objects can belong to only one class.) The further down this class-family tree an object belongs, the more specific it is. It also inherits properties, or <code>instances</code> from its parent classes, in addition to possessing its own specific and specialized instances.
+
+      You can look up the class of any object by calling the <code>class</code> method on it.</p>
+
+      <pre class="prettyprint"><code>puts 1.class          #=> Fixnum
+puts " ".class        #=> String
+puts [].classes       #=> Array</code></pre>
+
+      <p class="text"> Ruby will tell us that <code>1</code> is a <code>Fixnum</code>, <code>" "</code> is a String, and <code>[]</code> is an Array.
+
+      In Ruby, classes themselves are objects and, therefore, belong to a class. Furthermore, all classes ultimately belong to the common ancestor, <code>BasicObject</code>.</p>
+      <pre class="prettyprint"><code>puts 1.class.class         #=> Class</code></pre>
+
+      <p class="text">There isn't much to instances. They are bound (belong) to a certain class. An object can inherit instances (properties) from its progenitors, just like you inherited your nose from your mom, who got hers from her mom.
+
+      Now, on to an example to test all of this out.</p>
+
+      <pre class="prettyprint"><code>class Song
+  def initialize(artist, title, album)
+    @artist = artist
+    @title = title
+    @album = album
+  end
+  def now_playing
+    puts "Now playing: #{@title} by #{@artist} from #{@album}"
+  end
+end
+
+song_1 = Song.new("Taylor Swift", "Blank Space", 1989)
+song_2 = Song.new("Mark Ronson", "Uptown Funk", "Uptown Special")</code></pre>
+
+      <pre class="prettyprint"><code>song_1.now_playing
+>>"Now playing: Blank Space by Taylor Swift from 1989"
+song_2.now_playing
+>>"Now playing: Uptown Funk by Mark Ronson from Uptown Special"</code></pre>
+
+      <p class="text"> Here, we created a class, <code>Song</code>. (All classes distinguish themselves by beginning with a capital letter.) We start off the class with the method <code>initialize</code>, a special method in Ruby that lets you set up your object's state, or attribute(s). (All method names must begin with a lowercase letter.) <code>initialize</code> takes 3 parameters. Any object within the class <code>Song</code> carries around its own artist, title, and album names. These values are stored in <code>instance variables</code> so that they can be accessed throughout the class. (Instance variables are preceded by the <code>@</code>.) <code>now_playing</code> is an instance method. Similar to an instance variable, it can be called anywhere within the class. </p>
+
+      <pre class="prettyprint"><code>class KaraokeSong < Song
+  def initialize(artist, title, album, lyrics)
+    super(artist, title, album)
+    @lyrics = lyrics
+  end
+  def sing
+    puts "[#{@lyrics}]"
+  end
+end</code></pre>
+
+      <p class="text"> class <code>KaraokeSong</code> is a subclass of <code>Song</code> and inherits all of the properties and methods of its parent class. This class requires all of the same parameters as <code>Song</code> in addition to <code>lyrics</code>. By using the keyword <code>super</code>, the parameters of the parent class are called and appended.</p>
+
+      <pre class="prettyprint"><code>song_3 = KaraokeSong.new("Taylor Swift", "Blank Space", 1989, "Nice to meet you, Where you been? ...")
+song_3.now_playing
+>>"Now playing: Blank Space by Taylor Swift from 1989"
+song_3.sing
+>>"[Nice to meet you, Where you been? ...]"</code></pre>
+
+      <p class="text">song_3 has access to <code>Song#now_playing</code> and <code>KaraokeSong#sing</code></p>
+
+      <p class="text"> I could refactor these classes a little bit by using a setter method, which allows you to set an instance variable without the <code>initialize</code> method. The benefit of using these setter methods is that the subclass is decoupled from its parent class, thus giving control back to the parent class. This way, subclasses can contribute to and become specialized without having to know extensively its parent's algorithm. This may sound like programming gibberish but it helps to avoid problems down the road should more attributes and functions be added.</p>
+
+      <pre class="prettyprint"><code>class Song
+  attr_reader :artist, :title, :album
+  def now_playing
+    puts "Now playing: #{@title} by #{@artist} from #{@album}"
+  end
+end
+
+class KaraokeSong < Song
+  attr_reader :lyrics
+  def sing
+    puts "[#{@lyrics}]"
+  end
+end</code></pre>
+
+      <p class= "text"> The setter method creates both an instance variable and method by the name of the variable. Now, I can specifically call the artist, title, and album names respectively in addition to the defined methods in both classes.</p>
 
     </div>
 
