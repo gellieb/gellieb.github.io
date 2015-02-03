@@ -38,9 +38,112 @@
   <section>
     <div id="main-image"><img src="../imgs/white-peonies.png"/></div>
     <div class="body">
-      <div class="title"><h1>Title</h1><h2>January 5, 2015</h2></div>
+      <div class="title"><h1> Demystifying Blocks, Procs, and Lambdas</h1><h2>February 1, 2015</h2></div>
 
-      <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+      <p class="text"> Don't run for the hills just yet! Blocks, procs, and lambdas aren't complicated at all. They're just examples of closures in Ruby (aka ways of grouping code we want to run). Knowing how to apply these will keep your code nice and DRY!
+      <br><br>
+      Let's start with Blocks!</p>
+      <br><br>
+      <h3>BLOCKS</h3>
+      <p class="text"> These are the most common use of closures you have probably seen in Ruby.</p>
+      <pre class="prettyprint"><code>array = [1,2,3]
+array.each {|x| puts x*2}
+=> [2,4,6]
+array.each do |x|
+  puts x*2
+end</code></pre>
+      <br>
+      <p class = "text"> You can create a block by wrapping a chunk of code within curly braces <code>{}</code> or between the words <code>do</code> and <code>end</code>. Using the <code>do</code>-<code>end</code> syntax requires that the <code>do</code>, code for the block, and <code>end</code> all be on separate lines, whereas the code wrapped in the <code>{}</code> should be in a single line.
+        <br><br>
+      <h3>PROCS</h3>
+<pre class="prettyprint"><code> p =Proc.new {|x| puts x*2}
+array.each {&p}
+=> [2,4,6]
+
+proc = Proc.new {puts "Hello World"}
+proc.call
+=> Hello World
+p.class
+=> Proc</code></pre>
+      <br>
+
+      <p class="text">Here let's remark on the differences between blocks and procs.</p>
+      <br><br>
+
+
+      <h3> DIFFERENCES BETWEEN BLOCK AND PROCS</h3><br>
+      <p class="text">
+      1. Procs are objects. Blocks are not.<br><br>
+      2. Procs pass an ampersand argument <code>&p</code>.
+      <br>
+      <br>
+      3. Procs are reusable code.</p>
+
+      <pre class="prettyprint"><code>p = Proc.new {|x|puts x*2}</code></pre>
+      <p class="text"><code>p</code> is an instance of the Proc class so therefore, we can call methods on it and assign it to variables.
+      <br>
+      Blocks, on the other hand, are part of the syntax of a method call. You can't use them outside of a method without raising a syntax error.
+      <br>
+      <br>
+      <h3>Why is block lowercased and Proc uppercased?</h3><br>
+      <p class="text"> Proc is capitalized because it is a class in Ruby. However, blocks are lowercased because they aren't classes themselves but rather just a form of Proc.</p>
+        <br><br>
+      <h3> Lambdas</h3>
+      <p class="text">(Lambdas' counterparts in other languages are called "anonymous functions.")</p>
+      <pre class="prettyprint"><code>lam = lambda {|n| n*2}
+array.each(&lam)
+
+lam = lambda{puts "Hello World"}
+=> Hello World
+lam.class
+=> <Proc:0x007f9f42928388@(irb):264 (lambda)>
+</code></pre>
+      <p class="text">Lambdas may look exactly the same as procs, but there are 2 major differences.</p>
+      <br><br>
+      <h3>Procs vs. Lambdas</h3>
+      <br><p class="text">
+      1. Unlike procs, lambdas check the number of arguments passed.</p>
+      <pre class="prettyprint"><code>def args(code)
+  one, two = 1, 2
+  code.call(one, two)
+end
+
+args(Proc.new {|a,b,c| puts "Give me a #{a} and a #{b} and a #{c.class}"})
+=> Give me a 1 and a 2 and a NilClass
+
+args(lambda {|a,b,c| puts "Give me a #{a} and a #{b} and a #{c.class}"})
+=> ArgumentError: wrong number of arguments (2 for 3)</code></pre>
+  <br><br>
+      <p class="text">With procs, extra variables are set to <code>nil</code>. If there are too many variables, then they are ignored. However lambdas require a specific number of variables. They freak out and raise errors.<br><br>
+      2. Lambdas and procs treat the "return" keyword differently.</p>
+      <pre class="prettyprint"><code>def proc_return
+  Proc.new{ return "we just returned from the block"}.call
+  return "we just returned from the calling method"
+end
+
+puts proc_return
+=> we just returned from the block
+
+def lam_return
+  lam = lambda{return "we just returned from the block"}.call
+  return "we just returned from the calling method"
+end
+
+puts lambda_return
+=> we just returned from the calling method
+
+</code></pre>
+      <p class= "text"> In <code>proc_return</code>, once the method hits a return keyword, it stops the rest of the method and returns <code>Proc.new</code>.<br><br>
+      <code>lambda_return</code>, on the other hand, when the method hits the lambda to return <code>lambda</code>, instead of stopping, it keeps going to the next return to output <code>lambda_return</code> method.This difference is due to the difference between procs and methods. <br><br>
+      The <code>proc_return</code> behaves as if it's part of the calling method. So when return is used within it, it returns from both the block and the calling method. A block created with lambda behaves just like a method. So when you use <code>return</code> it exits the block without overriding the calling method.
+      <br>
+      So between lambdas and procs, procs aren't used often to create blocks because of their finicky response semantics.
+
+
+
+
+
+      </p>
 
     </div>
 
