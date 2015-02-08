@@ -39,22 +39,30 @@
 
 var canvas;
 var context;
-var mazeWidth = 463;
-var mazeHeight = 463;
-var pacStartX = 400;
-var pacStartY = 20;
-var mazeImg = new Image();
-var collision = 0;
-
-var pacMan;
-var ghost;
-var dot;
+var WIDTH = 500;
+var HEIGHT = 500;
 var dotsEatenCount = 0;
-var maxDotsInRound = 20;
-var moveDirection = 'up';
 
-var pacManHeight = 20;
-var pacManWidth = 20;
+var pacMan= {posX: 400, posY: 20, width: 10};
+var mazeImg = new Image();
+
+
+
+
+// var pacStartX = 400;
+// var pacStartY = 20;
+
+// var collision = 0;
+
+// var pacMan;
+// var ghost;
+// var dot;
+// var dotsEatenCount = 0;
+// var maxDotsInRound = 20;
+// var moveDirection = 'up';
+
+// var pacManHeight = 20;
+// var pacManWidth = 20;
 
 
 
@@ -70,18 +78,30 @@ var DOWN_ARROW = 40;
 function startGame() {
   canvas = document.getElementById("mazeCanvas");
   context = canvas.getContext("2d");
-  setInterval(draw, 10);
+  mazeImg.src = "http://www.hereandabove.com/cgi-bin/maze?20+20+20+2+10+0+0+0+255+255+255";
+  return setInterval(draw, 10);
+}
+
+function draw() {
+  clear();
+  context.beginPath();
+  context.arc(pacMan.posX, pacMan.posY, pacMan.width, 0, 2*Math.PI, true);
+  context.closePath();
+  context.fillStyle = "yellow";
+  context.fill();
+}
+
+
+function clear() {
+  context.clearRect(0,0,WIDTH,HEIGHT);
+  context.drawImage(mazeImg,0,0);
 }
 
 
 
 
 
-<!--
-//using arrow keys
-function.move() {
 
-} -->
 // Refactored Code
 
 
