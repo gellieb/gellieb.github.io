@@ -57,73 +57,6 @@ var pacManHeight = 20;
 var pacManWidth = 20;
 
 
-function startGame() {
-    canvas = document.getElementById("mazeCanvas");
-    context = canvas.getContext("2d");
-    mazeImg.src = "mazeImg.png";
-    return setInterval(draw, 10);
-    // moveDirection = 'up';
-    // dotsEatenCount = 0;
-}
-
-
-
-// function clearMazeBackground(x, y, width, height) {
-//     context.beginPath();
-//     context.rect(x, y, width, height);
-//     context.closePath();
-//     context.fillStyle= "white";
-//     context.fill();
-// }
-
-function rect(x,y,w,h) {
-  context.beginPath();
-  context.rect(x,y,w,h);
-  context.closePath();
-  context.fill();
-
-}
-
-function clear() {
-  context.clearRect(0, 0, mazeWidth, mazeHeight);
-  context.drawImage(mazeImg, 0, 0);
-
-}
-
-// function drawMazeAndPacMan(pacX,pacY) {
-//     rect(0, 0, canvas.width, canvas.height);
-//     var mazeImg = new Image();
-//     mazeImage.onLoad = function () {
-//         context.drawImage(mazeImg, 0, 0);
-//         drawRectangle (pacX, pacY, "#0000FF", false, true);
-//         context.beginPath();
-//         context.arc(542,122,7,0,2*Math.PI,false);
-//         context.closePath();
-//         context.fillStyle = "#00FF00";
-//         context.fill();
-//     };
-//     mazeImg.src = "http://www.hereandabove.com/cgi-bin/maze?20+20+20+2+10+0+0+0+255+255+255";
-
-// }
-
-function drawRectangle(x,y,style) {
-    clearMazeBackground(pacStartX, pacStartY, 15, 15);
-    pacStartX = x;
-    pacStartY = y;
-    context.beginPath();
-    context.rect(x,y,15,15);
-    context.closePath();
-    context.fillStyle = style;
-    context.fill;
-}
-
-drawMazeAndPacMan(400,20);
-
-
-
-
-
-
 
 // game keys
 var SPACE = 32;
@@ -132,13 +65,13 @@ var UP_ARROW = 38;
 var RIGHT_ARROW = 39;
 var DOWN_ARROW = 40;
 
-
-
-
-
-
 //functions
 
+function startGame() {
+  canvas = document.getElementById("mazeCanvas");
+  context = canvas.getContext("2d");
+  setInterval(draw, 10);
+}
 
 
 
