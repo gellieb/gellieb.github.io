@@ -51,7 +51,7 @@ var WIDTH = 500;
 var HEIGHT = 500;
 // var dotsEatenCount = 0;
 
-var pacMan= {posX: 63, posY: 393, width: 8};
+var pacMan= {posX: 439, posY: 39, width: 8};
 var step = 3; // step taken
 var mazeImg = new Image();
 var collision = 0;
