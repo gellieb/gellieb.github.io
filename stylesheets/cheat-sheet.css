@@ -68,6 +68,7 @@ top: -38px;
 */
 h1{
 font-family: "Shadows Into Light";
+text-decoration: underline;
 position: relative;
 font-size: 90px;
 top: -38px;
