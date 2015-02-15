@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<header>
+  <title>Cheat-Sheet-Ruby-BASICS</title>
+  <meta charset = "UTF-8" />
+  <link type = "text/css" rel="stylesheet" href="../stylesheets/cheat-sheet.css" />
+</header>
+
+<article>
+  <hgroup>
+    <h1>RUBY CHEAT SHEET</h1>
+  </hgroup>
+
+
+<section>
+    <section id="column_1"><h2>Integers</h2>
+        <ul>
+            <li> <strong>.to_i</strong>: Convert any individual string to integer</li>
+            <li><strong>.even?</strong>: To return true/false if integer is even</li>
+            <li> <strong>first_num.downto(last_num)</strong>: To count from one integer DOWN TO another(you will have to need a block of code)</li>
+            <li> <strong>first_num.upto(last_num)</strong>To count UP FROM one integer to another (again, you'll need a code block)</li>
+        </ul>
+    </section>
+    <section id="column_2"><h2>Strings</h2>
+        <ul>
+            <li><strong>.to_s</strong>: Convert anything to a string</li>
+            <li><strong>.downcase</strong>: To lowercase all letters</li>
+            <li><strong>.upcase</strong>: To put in all caps</li>
+            <li><strong>.capitalize</strong>: To capitalize just the first word</li>
+            <li><strong>.chars</strong>: or <strong>.split("")</strong>: To split the string into individual string-letters</li>
+            <li><strong>.length</strong>: To get the number of characters in the string</li>
+            <li><strong>.include?(some_char)</strong>: To return true/false whether some character/letter is included in the string</li>
+            <li><strong>.concat</strong>: To concatenate strings</li>
+        </ul>
+    </section>
+    <section id="column_3"><h2>Arrays</h2>
+        <ul>
+            <li><strong>.any?</strong>: To return true/false if any element within the array passes the condition stated in the block</li>
+            <li><strong>.each</strong>: To iterate (go through) each element in the array</li>
+            <li><strong>.map(!)</strong>: Similar to "each", but permanently changes the original array</li>
+            <li><strong>.include?</strong>: To return true/false if a particular element(x) is included in the array</li>
+            <li><strong>.pop</strong>: To pop out (permanently delete) the last element in the array</li>
+            <li><strong>.push</strong>: To add (permanently) to the array</li>
+            <li><strong>.empty?</strong>: To return true/false if an array has no elements</li>
+            <li><strong>.each_slice(3) {|x| p x}</strong>: To group the elements in an array (ie. groups of 3)</li>
+        </ul>
+    </section>
+    <section id="column_4"><h2>Hashes</h2>
+        <ul>
+            <li><strong>Hash[array]</strong>: To convert an (even numbered) array into a hash</li>
+            <li><strong>delete(key)</strong>: To delete a key-value pair</li>
+            <li><strong>.keys</strong>: To return all of the keys</li>
+            <li><strong>.values</strong> To return all of the values</li>
+            <li><strong>.value?(value)</strong>: To check if a hash has a certain value</li>
+        </ul>
+    </section>
+
+
+
+  </article>
+
+</html>
+
+
+
+
+
+
+
+
