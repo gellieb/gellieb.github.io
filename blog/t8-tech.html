@@ -40,7 +40,53 @@
     <div class="body">
       <div class="title"><h1>SQL Injections</h1><h2>February 15, 2015</h2></div>
 
-      <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+      <p class="text"> So this week, our language de la semaine was SQL. It's not complex at all. The data in a database is like a full service and ginormous library. SQL, the librarian, looks for and retrieves exactly what you're looking for. SQL statements like <code>SELECT * FROM table-name</code> seem straightforward-- this one means to retrieve all the info from a table called "table-name". Simple.
+      <br><br>
+      However, malicious users can use SQL against us and databases using SQL injections. Using SQL injections, conniving hackers can retrieve ID's and their passwords!
+      <br><br>
+      So, what are SQL injections?<br><br>
+      First off, to recap on what SQL does relative to us: SQL is used to display data on a webpage and it is common to let web users to input their own search values. Think: using a search engine, or looking for Joe Shmo in the Facebook's search box, or even putting in your username for your bank.</p>
+      <pre class="prettyprint"><code>txtUserId = getRequestString("UserId");
+txtSQL = "SELECT * FROM Users WHERE UserId = " + txtUserId;</code></pre>
+      <p class="text"> This is an example of a SQL statement. This one, in particular, creates a select statement by adding a variable (txtUserId) to select a string. The variable is fetched from the user input (Request for user ID) to the page.
+        <br><br>
+      A SQL injection is a technique where bastardly hacking hackers can inject SQL commands into a SQL statement, which would alter it and compromise the security of a web app.
+      <br>
+      Based on our example, the purpose of the code was to select a user with the inputted user ID. But nothing is stopping that hacker from entering something conniving like this:</p>
+      <pre class="prettyprint"><code>SELECT * FROM Users WHERE UserId = 105 or 1=1</code></pre>
+      <p class="text"> Now, this statement is totally valid. It seems innocuous... but because it's based on the condition <code>WHERE 1=1</code>, it will return all the rows from the table Users.
+      <br><br>
+      Eh.. seem dangerous yet?<br><br>
+      That statement is the same thing as saying this: </p>
+      <pre class="prettyprint"><code>SELECT UserId, Name, Password FROM Users WHERE UserId = 105 or 1=1</code></pre>
+
+      <p class="text"> Oh crap....
+      Now some asshole's got all of your personal information!!! <br><br>
+      The danger in SQL injections is that they are based on the condition where <code>"="</code> is ALWAYS TRUE! Even using a statement like this: <code>SELECT * FROM Users WHERE Name ="" or ""="" AND Pass ="" or ""=""</code> is totally valid and may give a hacker access to user names and passwords.
+      <br><br>
+      Now, the other pitfall of SQL injections: batched SQL statements!
+      <br><br>
+      Most databases support batched SQL statements, statements separated by a semicolon. That, in itself, isn't that bad; in fact, it's convenient. However, those clever bastards can also use this capability of supporting batched SQL statements to input this:</p>
+      <pre class="prettyprint"><code>SELECT * FROM Users WHERE UserId = 105; DROP TABLE Suppliers</code></pre>
+      <p class="text"> Now look what they did! They have all your info AND DELETED the table too!<br><br>
+
+      Catch your breath. Don't freak out. <br>Web developers recognize this giant gaping hole and have parameters for protection. Let's start out with one you may think would work, (but actually does diddly squat.)<br><br>
+
+      Let's blacklist some words! Yea! Blacklist those quotes, semicolons, and equal signs, even words like DELETE and DROP to prevent SQL injection attacks. This actually doesn't work so well.<br>
+      The words and characters are commonly used in our language so we HAVE to allow their use in the input.
+      So, the only proven way to protect a web site from SQL injection attacks is to use SQL parameters.<br><br>
+      SQL parameters are values that are added in a controlled manner to a SQL query at execution time (when you input your user ID/password).<br>This is the updated version of the SQL query from our initial example.
+      </p>
+      <pre class="prettyprint"><code>txtNam = getRequestString("CustomerName");
+txtAdd = getRequestString("Address");
+txtCit = getRequestString("City");
+txtSQL = "INSERT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2)";
+db.Execute(txtSQL,txtNam,txtAdd,txtCit)</code></pre>
+  <p class="text">SQL parameters are prefixed by a <code>@</code>. The SQL engine checks each listed parameter to make sure that it is correct for its column and are treated literally, rather than a statement to be executed.<br><br>
+
+  As one of the web's biggest vulnerabilities, parameterized queries are used far and wide in web languages. Use parameters. Avoid losing your information.</p>
+
+
 
     </div>
 
