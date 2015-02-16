@@ -79,3 +79,10 @@ font-size: 90px;
 top: -38px;
 left: 20%;
 }
+img {
+height: 100px;
+width: 100px;
+position: absolute;
+top: 66px;
+left: 152px;
+}
