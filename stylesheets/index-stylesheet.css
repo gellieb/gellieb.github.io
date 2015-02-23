@@ -63,10 +63,10 @@ header{
 
 /*HEADER*/
 #name{
-  font-size: 1em;
+  font-size: 4em;
   font-family: "Homemade Apple", serif;
   display: inline-block;
-  margin: 10px 0px -40px 20px;
+  margin: 1em 0 -3em 2em;
   text-align: center;
 
 }
