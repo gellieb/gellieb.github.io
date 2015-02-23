@@ -1,11 +1,11 @@
 /*MAIN IMAGE*/
 #main-image{
-  /*text-align: center;*/
+  text-align: center;
   /*margin:-300px 0 0 -300px;*/
   display:block;
   position: absolute;
-  left: 50%;
-  top: 80%;
+  left: 23%;
+  top: 30%;
 
   /*margin:-300px 0 0 -300px;
   display:block;
@@ -21,9 +21,9 @@
 #main-image img{
   text-align: center;
   /*height: 400px;*/
-  width:50em;
+  width:45em;
   position: relative;
-  z-index: 0
+  /*z-index: 0*/
 }
 
 /*BLOG POSTS*/
